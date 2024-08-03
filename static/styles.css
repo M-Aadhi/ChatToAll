@@ -1,0 +1,32 @@
+body {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+.chat-log {
+    flex: 1;
+    overflow-y: auto;
+    padding: 20px;
+    border-bottom: 1px solid #ccc;
+}
+
+.chat-input {
+    display: flex;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+}
+
+.chat-input input {
+    flex: 1;
+    padding: 10px;
+    font-size: 16px;
+    margin-right: 10px;
+}
+
+.chat-input button {
+    padding: 10px 20px;
+    font-size: 16px;
+}

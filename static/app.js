@@ -1,15 +1,15 @@
 document.addEventListener('DOMContentLoaded', function() {
-    const chatBox = document.getElementById('chat-box');
     const chatForm = document.getElementById('chat-form');
     const messageInput = document.getElementById('message');
 
     function fetchMessages() {
-        fetch('/chat')
+        fetch('/chatlog')
             .then(response => response.json())
             .then(data => {
-                chatBox.innerHTML = data.chat.split('\n').map(line => `<div>${line}</div>`).join('');
-                chatBox.scrollTop = chatBox.scrollHeight;
-            });
+                const chatLogElement = document.getElementById('chat-log');
+                chatLogElement.innerHTML = data.chat.join('<br>');
+            })
+            .catch(error => console.error(error));
     }
 
     chatForm.addEventListener('submit', function(event) {
@@ -25,7 +25,8 @@ document.addEventListener('DOMContentLoaded', function() {
             .then(() => {
                 messageInput.value = '';
                 fetchMessages();
-            });
+            })
+            .catch(error => console.error(error));
         }
     });
 

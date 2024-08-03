@@ -4,15 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ChatToAll</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <h1>ChatToAll</h1>
-    <div id="chat-box"></div>
-    <form id="chat-form">
-        <input type="text" id="message" placeholder="Type your message here">
+    <div class="chat-log" id="chat-log"></div>
+    <form id="chat-form" class="chat-input">
+        <input type="text" id="message" placeholder="Enter your message">
         <button type="submit">Send</button>
     </form>
-    <script src="app.js"></script>
+    <script src="/static/app.js"></script>
 </body>
 </html>
