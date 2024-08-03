@@ -6,7 +6,7 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class ChatServlet extends HttpServlet {
-    private static final String FILE_PATH = "/path/to/your/project/data/chatlog.txt";
+    private static final String FILE_PATH = "../data/chatlog.txt";
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
