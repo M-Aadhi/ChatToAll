@@ -1,10 +1,20 @@
 # src/chat.py
 
+import json
+import os
+
+CHATLOG_PATH = '../data/chatlog.json'
+
 def read_chat():
-    with open('../data/chatlog.txt', 'r') as file:
-        chat_data = file.read()
+    if os.path.exists(CHATLOG_PATH):
+        with open(CHATLOG_PATH, 'r') as file:
+            chat_data = json.load(file)
+    else:
+        chat_data = []
     return chat_data
 
 def write_chat(message):
-    with open('../data/chatlog.txt', 'a') as file:
-        file.write(message + '\n')
+    chat_data = read_chat()
+    chat_data.append({"message": message})
+    with open(CHATLOG_PATH, 'w') as file:
+        json.dump(chat_data, file, indent=4)
