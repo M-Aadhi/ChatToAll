@@ -7,11 +7,16 @@
     <link rel="stylesheet" href="/static/styles.css">
 </head>
 <body>
-    <div class="chat-log" id="chat-log"></div>
-    <form id="chat-form" class="chat-input">
-        <input type="text" id="message" placeholder="Enter your message">
-        <button type="submit">Send</button>
-    </form>
+    <div class="container">
+        <header>
+            <h1>ChatToAll</h1>
+        </header>
+        <div class="chat-log" id="chat-log"></div>
+        <form id="chat-form" class="chat-input">
+            <input type="text" id="message" placeholder="Enter your message" autocomplete="off">
+            <button type="submit">Send</button>
+        </form>
+    </div>
     <script src="/static/app.js"></script>
 </body>
 </html>
